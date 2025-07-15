@@ -83,7 +83,7 @@ function SignupForm() {
         password: hashedPassword
       };
 
-      const response = await fetch('/api/proxy/SignUp/v1', {
+      const response = await fetch('/api/proxy/signup.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -91,12 +91,19 @@ function SignupForm() {
         body: JSON.stringify(userData),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Error en el registro');
+      // Verificar el tipo de contenido de la respuesta
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error(text || 'El servidor respondió con un formato no válido');
       }
 
       const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Error en el registro');
+      }
+
       console.log('Registro exitoso:', data);
       alert('¡Registro exitoso! Bienvenido a nuestra plataforma.');
 
@@ -109,8 +116,11 @@ function SignupForm() {
       });
     } catch (err) {
       console.error('Error al registrar:', err);
-      setError(err.message);
-      alert(`Error al registrar: ${err.message}`);
+      const errorMessage = err.message.includes('<!DOCTYPE html>') 
+        ? 'Error del servidor: Por favor intente más tarde' 
+        : err.message;
+      setError(errorMessage);
+      alert(`Error al registrar: ${errorMessage}`);
     } finally {
       setIsLoading(false);
     }
@@ -232,7 +242,7 @@ function LeadForm() {
     setError(null);
 
     try {
-      const response = await fetch('/api/proxy/SignUp/v1/NewProspect', {
+      const response = await fetch('/api/proxy/newprospect.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -240,12 +250,19 @@ function LeadForm() {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Error al enviar el formulario');
+      // Verificar el tipo de contenido de la respuesta
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error(text || 'El servidor respondió con un formato no válido');
       }
 
       const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Error al enviar el formulario');
+      }
+
       console.log('Formulario enviado:', data);
       alert('Gracias por tu interés. Nos pondremos en contacto contigo pronto.');
 
@@ -258,8 +275,11 @@ function LeadForm() {
       });
     } catch (err) {
       console.error('Error al enviar:', err);
-      setError(err.message);
-      alert(`Error al enviar el formulario: ${err.message}`);
+      const errorMessage = err.message.includes('<!DOCTYPE html>') 
+        ? 'Error del servidor: Por favor intente más tarde' 
+        : err.message;
+      setError(errorMessage);
+      alert(`Error al enviar el formulario: ${errorMessage}`);
     } finally {
       setIsLoading(false);
     }
