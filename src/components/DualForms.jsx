@@ -116,8 +116,8 @@ function SignupForm() {
       });
     } catch (err) {
       console.error('Error al registrar:', err);
-      const errorMessage = err.message.includes('<!DOCTYPE html>') 
-        ? 'Error del servidor: Por favor intente más tarde' 
+      const errorMessage = err.message.includes('<!DOCTYPE html>')
+        ? 'Error del servidor: Por favor intente más tarde'
         : err.message;
       setError(errorMessage);
       alert(`Error al registrar: ${errorMessage}`);
@@ -275,8 +275,8 @@ function LeadForm() {
       });
     } catch (err) {
       console.error('Error al enviar:', err);
-      const errorMessage = err.message.includes('<!DOCTYPE html>') 
-        ? 'Error del servidor: Por favor intente más tarde' 
+      const errorMessage = err.message.includes('<!DOCTYPE html>')
+        ? 'Error del servidor: Por favor intente más tarde'
         : err.message;
       setError(errorMessage);
       alert(`Error al enviar el formulario: ${errorMessage}`);
