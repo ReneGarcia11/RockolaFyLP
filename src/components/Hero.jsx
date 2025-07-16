@@ -3,7 +3,7 @@ import { ContainerScroll } from './ScrollAnimation';
 
 export default function Hero() {
   return (
-    <div className="bg-dark-DEFAULT space-y-10 md:space-y-0">
+    <div id="hero" className="bg-dark-DEFAULT space-y-10 md:space-y-0">
       {/* Contenedor principal */}
       <ContainerScroll
         titleComponent={

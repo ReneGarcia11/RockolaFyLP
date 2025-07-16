@@ -40,13 +40,13 @@ function Header() {
             <Link href="#features" className="text-white/80 hover:text-white transition-colors">
               Características
             </Link>
-            <Link href="#demo" className="text-white/80 hover:text-white transition-colors">
+            <Link href="#hero" className="text-white/80 hover:text-white transition-colors">
               Demo
             </Link>
           </div>
           
           <Link 
-            href="#signup"
+            href="#dualform"
             className="px-6 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors"
           >
             Registrarse
@@ -80,7 +80,7 @@ function Header() {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <Link
-                href="#signup"
+                href="#dualform"
                 className="px-8 py-3 bg-orange-500 text-white rounded-full text-lg font-medium hover:bg-orange-600 transition-colors"
               >
                 Comenzar ahora
