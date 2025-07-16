@@ -31,16 +31,11 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4">Legal</h3>
-              <ul className="space-y-2">
-                <li><Link href="#" className="text-gray-400 hover:text-primary-DEFAULT transition">Términos</Link></li>
-                <li><Link href="#" className="text-gray-400 hover:text-primary-DEFAULT transition">Privacidad</Link></li>
-              </ul>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Contacto</h3>
               <ul className="space-y-2">
-                <li className="text-gray-400">info@appname.com</li>
+                <li className="text-gray-400">info@rockolafy.mx</li>
                 <li className="text-gray-400"></li>
               </ul>
             </div>
