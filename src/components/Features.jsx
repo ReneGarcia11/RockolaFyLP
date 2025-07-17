@@ -12,7 +12,7 @@ export default function Features() {
     },
     {
       title: "Soporte",
-      description: "Equipo de expertos disponibles 24/7 para ayudarte",
+      description: "Equipo de expertos disponibles 24/7 para ayudarte.",
       icon: "🛠️"
     }
   ];

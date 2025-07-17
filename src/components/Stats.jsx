@@ -5,7 +5,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const Stats = () => {
-  // Datos de ejemplo - puedes reemplazarlos con tus propios datos
   const [statsData, setStatsData] = useState([
     { id: 1, value: 0, target: 12500, label: "Usuarios activos", suffix: "+" },
     { id: 2, value: 0, target: 98, label: "Satisfacción", suffix: "%" },
@@ -22,7 +21,6 @@ const Stats = () => {
   useEffect(() => {
     if (inView) {
       controls.start("visible");
-      // Animación de conteo
       statsData.forEach((stat, index) => {
         animateCounter(index, stat.target);
       });

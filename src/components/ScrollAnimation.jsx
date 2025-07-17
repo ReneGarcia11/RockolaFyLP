@@ -9,7 +9,7 @@ export const ContainerScroll = ({
   translateY = [-50, 0],
   rotateRange = [5, 0],
   scaleRange = [0.92, 1],
-  opacityRange = [0.8, 1, 0.8], // Asegurar que coincida con el rango de entrada
+  opacityRange = [0.8, 1, 0.8], 
   perspective = '1200px',
   className = '',
   containerClassName = ''
@@ -32,14 +32,12 @@ export const ContainerScroll = ({
     smooth: 0.1
   });
 
-  // Asegurar que los rangos de entrada/salida coincidan
-  const inputRange = [0, 1]; // Rango de entrada consistente
+  const inputRange = [0, 1]; 
   
   const rotate = useTransform(scrollYProgress, inputRange, rotateRange);
   const scale = useTransform(scrollYProgress, inputRange, scaleRange);
   const translate = useTransform(scrollYProgress, inputRange, translateY);
   
-  // Para opacity que usa 3 puntos, asegurar que el rango de salida tenga 3 valores
   const opacityInputRange = [0, 0.5, 1];
   const opacity = useTransform(scrollYProgress, opacityInputRange, opacityRange);
 

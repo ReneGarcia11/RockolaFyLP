@@ -1,4 +1,3 @@
-// components/MapWrapper.jsx
 'use client';
 import dynamic from 'next/dynamic';
 
