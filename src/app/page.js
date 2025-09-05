@@ -1,10 +1,10 @@
-import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import Features from '@/components/Features';
-import DualForms from '@/components/DualForms';
-import Footer from '@/components/Footer';
-import Stats from '@/components/Stats';
-import MapAnimation from '@/components/MapAnimation';
+import Header from '@/app/components/Header';
+import Hero from '@/app/components/Hero';
+import Features from '@/app/components/Features';
+import DualForms from '@/app/components/DualForms';
+import Footer from '@/app/components/Footer';
+import Stats from '@/app/components/Stats';
+import MapAnimation from '@/app/components/MapAnimation';
 
 export default function Home() {
   return (

@@ -1,11 +1,11 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  trailingSlash: true,
   images: {
     unoptimized: true
-  },
-  // Añade esta configuración para ignorar el error de API routes
-  skipTrailingSlashRedirect: true,
-  experimental: {
-    appDir: true,
   }
+  
 };
+
+export default nextConfig;
